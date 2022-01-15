@@ -46,6 +46,8 @@ This is due to the fact that the latex files contain no bibtex entries or citati
 
 ![example_overlay.tex output](/example_output_figs/example_overlay.png)
 
+# 解释 #
+[example_laplace.tex](./example_laplace.tex)中写了该项目中所涉及的的TikZ相关知识的解释。看了这些解释和示例，基本就可以修改该项目，应用到自己的latex中，不需要耗费大量的经历在TikZ基础上。
 
 # 有关TikZ的简易教程 #
 - [简单解释](https://blog.csdn.net/wait_for_eva/article/details/106251084)
