@@ -48,4 +48,6 @@ This is due to the fact that the latex files contain no bibtex entries or citati
 
 
 # 有关TikZ的简易教程 #
-[简单解释](https://blog.csdn.net/wait_for_eva/article/details/106251084)
+- [简单解释](https://blog.csdn.net/wait_for_eva/article/details/106251084)
+- [TikZ从零开始 CSDN专栏](https://blog.csdn.net/jasminefeng/category_10781776.html)
+- [TikZ官方文档阅读笔记](https://marquistj13.github.io/MyBlog/2018/07/tikz-basics) 这个感觉有点零散
