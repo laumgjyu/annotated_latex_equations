@@ -33,4 +33,24 @@
 % 例如, 第5行中, \tikzmarknode{u}{\highlight{red}{$\mu$}}, u为这个node的名称, \highlight{red}{$\mu$}为这个node的内容或description, 这个node的位置就是其内容所在的位置.
 
 
-% 其次要了解\path的概念.
+% 其次要了解\draw的概念.
+% \draw表示划线. 其后通常跟着坐标, 如: \drarw (0,0) -- (1,1); 表示从坐标(0, 0)画一条到坐标(1, 1)的直线. 不写单位默认为cm.
+% 可以写多个坐标, 通过\draw在这多个坐标之间连线. 
+% 坐标可写成偏移的形式: \draw (0,0) -- +(1,1) -- +(0,1); % (0,0) -- (0+1,0+1) -- (0+0,0+1);
+% 使用一个+表示偏移时, 每个坐标的偏移都是基于第一个坐标的; 使用两个+, 即++, 表示偏移时, 每个坐标的偏移都是基于前一个坐标的, 例如: \draw (0,0) -- ++(1,1) -- +(0,1); %(0,0) -- (0+1,0+1) -- (0+1+0, 0+1+1);
+% 坐标还可以替换为node的名称.
+% 两个坐标之间的连线形式: --表示两点之间连直线; |-表示两点之间先画竖线, 再画直线; -|表示两点之间先画直线, 再画竖线.
+
+
+% 现在可以了解\path的概念了. 这里只介绍本项目中用到的\path的用法.
+% \path在不加任何参数时, 是画一条显示不出来的线. 因此, 本项目利用\path来给node定位.
+% 例如第9行: \path (u.north) ++ (0,2em) node[anchor=south west,color=red!67] (scalep){\textbf{location parameter, mean}};
+% 表示, 从u这个node的上面 (north), 纵坐标距离u 2em, 横坐标与u相同的位置, 放置一个名为scalep的node. 如果以u为坐标原点, 那么scalep的左下角位于 (0, 2em) 的位置.
+
+
+% 通过介绍上述三个概念, 就可以看懂该项目的代码, 并基于该项目改写.
+% 本文件中, 第5行在公式的几个项上放置node; 
+% 第9行, 在u这个node的north这个锚点的上面2em处, 创建一个新的node, 名为scalep, 内容为\textbf{location parameter, mean}, 内容的颜色为red!67, node的左下角放置在u.north上面2em处的点上;
+% 第10行: \draw [color=red!57](u.north) |- ([xshift=-0.3ex,color=red]scalep.south east);
+% 先看个简化版的第10行: \draw (u.north) |- (scalep.south east); 将node u的north锚点和node scalep的south east锚点相连, 连线为折线, 从u.north开始, 先画竖线, 再画横线, 最后与scalep的south east锚点相连接.
+% 在第10行, \draw的参数表示折线的颜色为red!57, scalep前的中括号表示对这个node的参数进行修改, 其中xshift表示将这个node沿横轴移动.
