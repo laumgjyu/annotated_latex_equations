@@ -1,6 +1,6 @@
 \documentclass[letterpaper,twocolumn,10pt]{article} 
 
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor} 
 \usepackage{tikz}
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{arrows,shapes}
@@ -9,6 +9,7 @@
 
 \usepackage{amsmath}
 \usepackage{amsthm}
+\let\Bbbk\relax         %%redefined in newtxmath.sty 在有的模板中，如acmart，其中定义了\Bbbk，但是\Bbbk也在amssymb中定义了，因此会产生冲突。这句话是忽略模板中定义的\Bbbk。
 \usepackage{amssymb}
 \usepackage{mathtools, nccmath}
 \usepackage{wrapfig}
