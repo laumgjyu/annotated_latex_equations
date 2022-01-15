@@ -16,3 +16,21 @@
     \caption{An example in the single column format using the wrapfig construct.}
     \vspace{0.5\baselineskip}
 \end{wrapfigure}
+
+% 下面解释一下上述代码
+
+% 首先要明白node的概念. node可以看做是一个点, 可以与其他点连线.
+% 定义一个node: node[params] (name) {description}. 
+% params表示这个node的参数, 如shape, anchor, color. shape表示node的形状, 可以将node设置为圆形 (circle), 矩形 (rectangle, 默认) 或坐标 (coordinate); anchor表示将这个node哪个部分放置到这个点所在的坐标上, 默认是center, 即将node的中间部分放到所设置的坐标上, 可选参数很多, 详见node_anchor.jpg; color表示这个node的description的颜色.
+% name为定义的这个node的名称, 类似函数变量名. 在后面可以通过这个名称引用这个node.
+% description表示这个node上要显示的文字描述.
+
+% 上面第9行就定义了一个node: node[anchor=south west,color=red!67] (scalep){\textbf{location parameter, mean}}
+% 其中, anchor参数表明了将该node的左下角放置在所要设置坐标上, color表明node的描述为红色, scalep为这个node的名称, 后面的中括号里是这个node的描述.
+
+% 第5行使用了\tikzmarknode{name}{content}来基于现有的content定义一个node. 
+% name为这个node的名称, content为这个node的内容, 这个node的位置就是content的位置. 
+% 例如, 第5行中, \tikzmarknode{u}{\highlight{red}{$\mu$}}, u为这个node的名称, \highlight{red}{$\mu$}为这个node的内容或description, 这个node的位置就是其内容所在的位置.
+
+
+% 其次要了解\path的概念.
